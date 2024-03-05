@@ -57,7 +57,7 @@ function createSchema(req, res, next) {
         role: Joi.string().valid(Role.Admin, Role.User).required(),
         email: Joi.string().email().required(),
         password: Joi.string().min(6).required(),
-        confirmPassword: Joi.string().valid(Joi.ref('passowrd')).required()
+        confirmPassword: Joi.string().valid(Joi.ref('password')).required()
     });
     validateRequest(req, next, schema);
 }
